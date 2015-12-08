@@ -1,14 +1,18 @@
-<html> 													<!-- 1. Html-tagg -->
+<html><!-- InstanceBegin template="/Templates/homewebbshop.dwt" codeOutsideHTMLIsLocked="false" --> 													<!-- 1. Html-tagg -->
 
 <head> 													<!-- 2. Head-tagg -->
-<title>PCMASTERRACE</title>								<!-- 3. title-tagg  -->
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>PCMASTERRACE</title>
+<!-- InstanceEndEditable -->
+<!-- 3. title-tagg  -->
 
   <link rel="stylesheet" href="css.css">
-
+  <!-- InstanceBeginEditable name="head" -->
+  <!-- InstanceEndEditable -->
 </head>
 
 <body> 													<!-- 4. body-tagg  -->
- <a href="index.html" style="display:inline-block;"> 													<!-- 4. body-tagg  -->
+ <a href="index.php" style="display:inline-block;"> 													<!-- 4. body-tagg  -->
   	<div id="header">
   	</div>
   </a>
@@ -16,14 +20,15 @@
 
   <div id="navigation">
   <ul class="navigation">
-    <li><a href="index.html">Start</a>
-    <li><a href="shop.html">Shop</a>
-    <li><a href="about.html">About</a>
-    <li><a href="account.html">Account</a>
+    <li><a href="../../HemsidaD0018Ev4/index.php">Start</a>
+    <li><a href="../../HemsidaD0018Ev4/shop.html">Shop</a>
+    <li><a href="../../HemsidaD0018Ev4/about.html">About</a>
+    <li><a href="../../HemsidaD0018Ev4/account.php">Account</a>
+    <li><a href="../../HemsidaD0018Ev4/myOrders.php">Shoppingcart</a>
   </ul>
   </div>
 
-  <div id="content">
+  <div id="content"><!-- InstanceBeginEditable name="Content" -->
     <center>
       <br>My Account</br>
 <?php
@@ -36,7 +41,7 @@ echo "Connected to Database<br />";
       
       $sql= "SELECT password, username FROM account WHERE username='$username'";
       $result= mysqli_query($connect, $sql);//fetch old password from database
-      $row=mysqli_fetch_array($result,MYSQLI_ASSOC); //hÃ¤mtar ut allt pÃ¥ raden
+      $row=mysqli_fetch_array($result,MYSQLI_ASSOC); //hämtar ut allt på raden
       $temp[] = "{$row['password']} {$row['username']}";	
       
       print $temp*/
@@ -55,7 +60,7 @@ $colsToDisplay = 7;
 $htmlOutput    = array();
 
 //GET ACCOUNT LIST
-$sql = "SELECT username, password, city, adress, zipcode, FROM account";
+$sql = "SELECT username, password, city, adress, zipcode, name, lastname WHERE account";
 $result= mysqli_query($connect, $sql);
 for($i=0; $row = $result->fetch_assoc(); $i++) {
          $htmlOutput[] = "<tr><td>{$row['username']}</td> <td>{$row['password']}</td> <td>{$row['city']}</td> <td>{$row['adress']}</td></tr>";
@@ -66,8 +71,7 @@ print '<table   >' . implode('', $htmlOutput) . '</table>'
 ?>  
 
       
-	
-    </center>
-  </div>
+	    </center>
+  <!-- InstanceEndEditable --></div>
 </body>
-</html>
+<!-- InstanceEnd --></html>
