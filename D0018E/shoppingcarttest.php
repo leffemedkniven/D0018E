@@ -17,7 +17,7 @@ $colsToDisplay = 7;
 $htmlOutput    = array();
 
 //GET ACCOUNT LIST
-$sql = "SELECT username, password, city, adress, zipcode, name, lastname FROM account";
+$sql = "SELECT username, password, city, adress, zipcode FROM account";
 $result= mysqli_query($connect, $sql);
 for($i=0; $row = $result->fetch_assoc(); $i++) {
          $htmlOutput[] = "<tr><td>{$row['username']}</td> <td>{$row['password']}</td> <td>{$row['city']}</td> <td>{$row['adress']}</td></tr>";
