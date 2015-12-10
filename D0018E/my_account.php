@@ -19,7 +19,7 @@
     <li><a href="index.html">Start</a>
     <li><a href="shop.html">Shop</a>
     <li><a href="about.html">About</a>
-    <li><a href="myOrders.php">Account</a>
+    <li><a href="my_account.php">Account</a>
   </ul>
   </div>
 

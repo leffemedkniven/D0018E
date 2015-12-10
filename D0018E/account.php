@@ -24,7 +24,7 @@
     <li><a href="shop.html">Shop</a>
     <li><a href="about.html">About</a>
     <li><a href="account.php">Account</a>
-  </ul>
+  </ul> 
   </div>
 
   <div id="content"><!-- InstanceBeginEditable name="Content" -->
