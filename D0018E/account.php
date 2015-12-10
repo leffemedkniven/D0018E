@@ -52,8 +52,6 @@ $db=@$_POST['webshopdb'];
 $username=@$_POST['username'];
 $password= @$_POST['password'];
 
-echo "$username<br />";
-echo "$new_password<br />";
 
 $sql= "SELECT password FROM account WHERE username='$username'";
 $result= mysqli_query($connect, $sql);//fetch old password from database
@@ -67,9 +65,6 @@ if($username == True){
 		}
 	}
 }
-    
-$username = $_POST["user_name"];
-$password= $_POST['password'];
 
 
 $sql= "SELECT username, password FROM account WHERE username='$username'";
