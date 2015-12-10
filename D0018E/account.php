@@ -67,6 +67,29 @@ if($username == True){
 		}
 	}
 }
+    
+$username = $_POST["user_name"];
+$password= $_POST['password'];
+
+
+$sql= "SELECT username, password FROM account WHERE username='$username'";
+$result = mysqli_query($connect, $sql);//fetch password from database
+$row = mysqli_fetch_row($result); //hämtar ut allt på raden
+$use = $row[0];
+$pass = $row[1];		//tilldelar password värdet
+
+
+if($username == $use && $password == $pass){
+	$_SESSION['username'] = $username;
+	$_SESSION['password'] = $pass;
+
+			echo $_SESSION['username'];
+			echo $_SESSION['password'];
+	
+}
+else{
+	echo "wrong username/password";
+}
 
 
 ?>
