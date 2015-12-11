@@ -1,0 +1,43 @@
+<html> 													<!-- 1. Html-tagg -->
+
+<head> 													<!-- 2. Head-tagg -->
+<title>PCMASTERRACE</title>								<!-- 3. title-tagg  -->
+
+  <link rel="stylesheet" href="css.css">
+
+</head>
+
+<body>
+  <a href="index.html" style="display:inline-block;"> 													<!-- 4. body-tagg  -->
+  	<div id="header">
+  	</div>
+  </a>
+  
+<div id="navigation">
+  	<ul class="navigationlink">
+    		<li><a href="index.html">Start</a>
+   		<li><a href="shop.html">Shop</a>
+    		<li><a href="about.html">About</a>
+    		<li><a href="account.html">Log in</a>
+  	</ul>
+  </div>
+
+  <div id="content">
+    <center>
+      <br>SHOP</br><br></br>
+    </center>
+    
+    <a href="game1.html" style="display:inline-block;">
+	<div id="game2">
+	</div>
+    </a>
+    
+    <a href="game1.html" style="display:inline-block;">
+	<div id="game1">
+	</div>
+    </a>
+    
+    
+  </div>
+</body>
+</html>

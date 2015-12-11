@@ -1,0 +1,42 @@
+<?php 
+
+//echo $_SESSION['username'];
+
+?>
+<html><!-- InstanceBegin template="/Templates/homewebbshop.dwt" codeOutsideHTMLIsLocked="false" --> 													<!-- 1. Html-tagg -->
+
+<head> 													<!-- 2. Head-tagg -->
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>PCMASTERRACE</title>
+<!-- InstanceEndEditable -->
+<!-- 3. title-tagg  -->
+
+  <link rel="stylesheet" href="css.css">
+  <!-- InstanceBeginEditable name="head" -->
+  <!-- InstanceEndEditable -->
+</head>
+
+<body> 													<!-- 4. body-tagg  -->
+ <a href="index.html" style="display:inline-block;"> 													<!-- 4. body-tagg  -->
+  	<div id="header">
+  	</div>
+  </a>
+
+
+  <div id="navigation">
+  <ul class="navigation">
+    <li><a href="index.php">Start</a>
+    <li><a href="shop.html">Shop</a>
+    <li><a href="about.html">About</a>
+    <li><a href="account.php">Account</a>
+  </ul>
+  </div>
+
+  <div id="content"><!-- InstanceBeginEditable name="Content" -->
+    <center>
+      <br>
+      START
+    </center>
+  <!-- InstanceEndEditable --></div>
+</body>
+<!-- InstanceEnd --></html>
