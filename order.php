@@ -38,6 +38,7 @@
         <br> Order <?php echo $order_id?></br>
 
 <?php
+    
 $connect = mysqli_connect('localhost','root','123','webshopdb') or die(mysqli_error());
 echo "Connected to MySQL<br />";
 mysqli_select_db($connect,'webshopdb') or die(mysql_error());

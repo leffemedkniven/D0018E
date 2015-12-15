@@ -1,7 +1,26 @@
 <?php
+$connect = mysqli_connect('localhost','root','123','webshopdb') or die(mysqli_error());
+//echo "Connected to MySQL<br />";
+mysqli_select_db($connect,'webshopdb') or die(mysql_error());
+//echo "Connected to Database<br />";
+
 session_start();
 
+$username = $_SESSION['username'];
+$password = $_SESSION['password'];
+
+$connect = mysqli_connect('localhost','root','123','webshopdb') or die(mysqli_error());
+//echo "Connected to MySQL<br />";
+mysqli_select_db($connect,'webshopdb') or die(mysql_error());
+//echo "Connected to Database<br />";
+
+$sql1 = "Fallout 4";
+
+$sql = "INSERT INTO Shoppingcart_Item(name, quantity, Products_ID, Cart_ID) VALUES ($sql1, 1, (SELECT ID FROM Products WHERE Name='$sql1'), (SELECT ID FROM Cart WHERE Account_username = $username))";
+
+mysqli_query($connect, $sql);    
 ?>
+
 
 <html><!-- InstanceBegin template="/Templates/homewebbshop.dwt" codeOutsideHTMLIsLocked="false" --> 													<!-- 1. Html-tagg -->
 
@@ -35,36 +54,8 @@ session_start();
 
   <div id="content"><!-- InstanceBeginEditable name="Content" -->
     <center>
-<br><p id="game_name">Fallout 4</p></br><br></br>
-    	Very nice game, you can buy now or maybe no. 
-    </center>
-	<div id="game1"></div>
-	<center>
-	<div>
-	
-	<form action="addItem.php" method="post">
-		<input type="image" src="buy.jpg" name="buy" class="btTxt submit" id="buy">
-    </form>
-	</div>
+      Item added to shopping cart!
     </center>
   <!-- InstanceEndEditable --></div>
 </body>
 <!-- InstanceEnd --></html>
-
-<?php
-
-$connect = mysqli_connect('localhost','root','123','webshopdb') or die(mysqli_error());
-echo "Connected to MySQL<br />";
-mysqli_select_db($connect,'webshopdb') or die(mysql_error());
-echo "Connected to Database<br />"; 
-
-	
-	//$db=@$_POST['webshopdb'];
-	//$id=@$_POST('1')
-	
-	//$sql= "SELECT image FROM products WHERE ID='$id'";
-	
-	//$sql=INSERT INTO shopping_cart[]();
-	
-	
-?>

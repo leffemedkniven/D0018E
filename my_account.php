@@ -34,13 +34,13 @@ echo "Connected to MySQL<br />";
 mysqli_select_db($connect,'webshopdb') or die(mysql_error());
 echo "Connected to Database<br />";
 session_start();
-$username = $_SESSION['username'];        
+$username = $_SESSION['username'];  
       $temp = array();
       
-      $sql= "SELECT password, username FROM account WHERE username='$username'";
+      $sql= "SELECT username, name, lastname, adress, city, zipcode  FROM account WHERE username='$username'";
       $result= mysqli_query($connect, $sql);//fetch old password from database
       $row=mysqli_fetch_array($result,MYSQLI_ASSOC); //hämtar ut allt på raden
-      $temp[] = "<tr><td>{$row['password']}</td></tr><br /><tr> <td>{$row['username']}</td></tr> ";	
+      $temp[] = "<tr> <td>{$row['username']}</td></tr><tr><td>{$row['name']}</td></tr><tr><td>{$row['lastname']}</td></tr> <tr><td>{$row['adress']}</td></tr><tr><td>{$row['city']}</td></tr><tr><td>{$row['zipcode']}</td></tr>";	
       
       print '<table>' . implode('', $temp) . '</table>' 
 ?>      
@@ -55,8 +55,6 @@ echo "Connected to Database<br />";
 
 
 $username = $_SESSION['username'];    
-//INITIALIZE VARIABLES
-$colsToDisplay = 7;
 $htmlOutput    = array();
 
 //GET ACCOUNT LIST

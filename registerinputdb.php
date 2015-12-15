@@ -31,14 +31,18 @@ if($temp != NULL){
                             if($zipcode == true){
                                 if($password == true) {
                                     if($repeat_password == true) {
-                                        if($repeat_password == $password){    
-                                            $sql = "INSERT into Shopping_Cart (ID)       
-                                                            VALUES('$username')";
-                                            if(mysqli_query($connect, $sql)) {
-                                                    $sql = "INSERT into account (username, Name, Lastname, city, adress, zipcode, password)       
+                                        if($repeat_password == $password){
+                                            $sql = "INSERT into account (username, Name, Lastname, city, adress, zipcode, password)       
                                                         VALUES('$username','$first_name','$surname','$city','$adress','$zipcode','$password')";
+                                            if(mysqli_query($connect, $sql)) {
+                                                        $sql = "INSERT into cart(account_username)       
+                                                            VALUES('$username')";    
                                                 if(mysqli_query($connect, $sql)) {
-                                                    echo "New account created successfully";
+                                                    session_start();
+                                                    $_SESSION['username'] = $username;
+	                                                $_SESSION['password'] = $pass;
+                                                    
+                                                    header("Location: my_account.php");
 
                                             } else {
                                                 echo "Error: " . $sql . "<br>" . mysqli_error($connect);}
